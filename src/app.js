@@ -1,6 +1,6 @@
-const createServer = require("./createServer");
-const FigureCalculator = require("./FigureCalculator");
-const MathBasic = require("./MathBasic");
+const createServer = require("./course/createServer");
+const FigureCalculator = require("./course/FigureCalculator");
+const MathBasic = require("./course/MathBasic");
 
 const start = async () => {
   const figureCalculator = new FigureCalculator(MathBasic);

@@ -1,29 +1,29 @@
 /* istanbul ignore file */
-const pool = require('../src/practice/auth-api/Infrastructures/database/postgres/pool');
+const pool = require("../src/practice/auth-api/Infrastructures/database/postgres/pool")
 
 const AuthenticationsTableTestHelper = {
     async addToken(token) {
         const query = {
-            text: 'INSERT INTO authentications VALUES($1)',
+            text: "INSERT INTO authentications VALUES($1)",
             values: [token],
-        };
+        }
 
-        await pool.query(query);
+        await pool.query(query)
     },
 
     async findToken(token) {
         const query = {
-            text: 'SELECT token FROM authentications WHERE token = $1',
+            text: "SELECT token FROM authentications WHERE token = $1",
             values: [token],
-        };
+        }
 
-        const result = await pool.query(query);
+        const result = await pool.query(query)
 
-        return result.rows;
+        return result.rows
     },
     async cleanTable() {
-        await pool.query('TRUNCATE TABLE authentications');
+        await pool.query("TRUNCATE TABLE authentications")
     },
-};
+}
 
-module.exports = AuthenticationsTableTestHelper;
+module.exports = AuthenticationsTableTestHelper

@@ -1,7 +1,7 @@
 /**
  * @type {import('node-pg-migrate').ColumnDefinitions | undefined}
  */
-exports.shorthands = undefined;
+exports.shorthands = undefined
 
 /**
  * @param pgm {import('node-pg-migrate').MigrationBuilder}
@@ -11,11 +11,11 @@ exports.shorthands = undefined;
 exports.up = (pgm) => {
     pgm.createTable("authentications", {
         token: {
-            type: 'TEXT',
-            notNull: true
-        }
+            type: "TEXT",
+            notNull: true,
+        },
     })
-};
+}
 
 /**
  * @param pgm {import('node-pg-migrate').MigrationBuilder}
@@ -23,5 +23,5 @@ exports.up = (pgm) => {
  * @returns {Promise<void> | void}
  */
 exports.down = (pgm) => {
-    pgm.dropTable("authentications");
-};
+    pgm.dropTable("authentications")
+}
